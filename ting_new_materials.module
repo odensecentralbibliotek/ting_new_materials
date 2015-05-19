@@ -125,10 +125,10 @@ function ting_new_materials_make_limit_query($limit = 0) {
   if ($limit > 0) {
     // Get current date (defaults to now).
     $date = new DateTime();
-    // The format "sort.acquisitionDate=(201403* OR 201402*) used here is due to
+    // The format "term.acquisitionDate=(201403* OR 201402*) used here is due to
     // limitations in the data well. It simply don't support look up things
     // between two dates.
-    $query = ' AND sort.acquisitionDate=(' . $date->format('Ym') . '*';
+    $query = ' AND term.acquisitionDate=(' . $date->format('Ym') . '*';
     for ($i = 1; $i <= $limit; $i++) {
       $date->sub(DateInterval::createFromDateString('1 month'));
       $query .= ' OR ' . $date->format('Ym') . '*';
