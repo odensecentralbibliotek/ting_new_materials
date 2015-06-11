@@ -110,14 +110,14 @@ function ting_new_materials_build_search_query($entity, $limit_query = TRUE) {
 }
 
 /**
- * Limit a search query expression to a specified number of months.
+ * Limit a search query expression to a specified number of days.
  *
  * @param int $limit
- *   The number of months back to limit the results.  Min 1 and max 12 month. 0
+ *   The number of days to limit.  Min 1 and max 365 month. 0
  *   means unlimited.
  *
  * @return string
- *   The limit by month search query expression.
+ *   The search query expression limited by days.
  */
 function ting_new_materials_make_limit_query($limit = 0) {
   $query = "";
@@ -127,10 +127,7 @@ function ting_new_materials_make_limit_query($limit = 0) {
     $date = new DateTime();
     $limit_period = 'P' . $limit . 'D';
     $date->sub(new DateInterval($limit_period));
-    // The format "term.acquisitionDate=(201403* OR 201402*) used here is due to
-    // limitations in the data well. It simply don't support look up things
-    // between two dates.
-    $query = ' AND term.acquisitionDate>=' . $date->format('Ymd');
+    $query = ' AND term.acquisitionDate>=' . $date->format('Ymd') . ' AND (år=2015 OR år=2014)';
   }
 
   return $query;
