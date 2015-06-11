@@ -75,7 +75,7 @@ function ting_new_materials_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Limits how the number of months worth of new materials there are shown. E.g. value of 3  means results from current month and the last three are shown. If left empty users can see all results of a query sorted newest first',
+    'description' => 'Limits in days how old the new materials maybe. E.g. a value of 90 limits to last 90 days',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -105,9 +105,9 @@ function ting_new_materials_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_ting_new_materials_limit',
     'label' => 'Limit period',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
-      'max' => 12,
+      'max' => 365,
       'min' => 0,
       'prefix' => '',
       'suffix' => '',
