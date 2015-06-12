@@ -29,7 +29,7 @@ function ting_new_materials_content_type_render($subtype, $conf, $panel_args, $c
     $node = $context[0]->data;
 
     $covers_mode_field = field_get_items('node', $node, 'field_ting_new_materials_covers');
-    $covers_mode = empty($items[0]['value']) ? 0 : $items[0]['value'];
+    $covers_mode = empty($covers_mode_field[0]['value']) ? 0 : $covers_mode_field[0]['value'];
 
     if ($covers_mode) {
        $content = ting_new_materials_covers($node);
@@ -117,7 +117,11 @@ function ting_new_materials_covers($node) {
   $query = ting_new_materials_build_search_query($node);
 
   // Search the data well with the query and pager page.
-  $search_result = ting_new_materials_do_search($query, $pager_page, $num_per_page);
+  $search_result = ting_new_materials_do_search($query, 1, 50); //Todo handle more than 50 results
+  $search_objects = ting_new_materials_process_search_results($search_result);
+  $search_objects = ting_new_materials_build_search_result($search_objects, $num_per_page );
+  drupal_add_js(drupal_get_path('module', 'ting_covers') . '/js/ting-covers.js');
+  return ting_new_materials_render_cover($search_objects, $node->title);
 }
 
 /**
