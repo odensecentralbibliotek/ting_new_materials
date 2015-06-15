@@ -16,19 +16,19 @@ function ting_new_materials_check_covers($covers_ids, $number_of_objects) {
     // Determine if the local id is a known negative.
     if (cache_get('ting_covers:' . $cover_id->localId, FALSE)) {
       $cover_id->hasImage = FALSE;
-      break;
+      continue;
     }
 
     $path = ting_covers_object_path($cover_id->localId);
-    if (file_exists($path)) {
+    if (false && file_exists($path)) {
       $cover_id->hasImage = TRUE;
+      $number_found++;
     } else {
       $missing_images_local_ids[] = (object) array(
           'localIdentifier' => $cover_id->localId,
           'libraryCode' => $cover_id->ownerId,
       );
     }
-    $number_found++;
     if ($number_found >= $number_of_objects) {
       break;
     }
