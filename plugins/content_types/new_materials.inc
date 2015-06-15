@@ -121,6 +121,7 @@ file_put_contents("/home/quickstart/work/debug/debugnewm6.txt", print_r($query, 
   $search_objects = ting_new_materials_process_search_results($search_result);
   $search_objects = ting_new_materials_build_search_result($search_objects, $num_per_page );
   drupal_add_js(drupal_get_path('module', 'ting_covers') . '/js/ting-covers.js');
+  drupal_add_css(drupal_get_path('module', 'ting_inspiration_list') . '/css/ting_inspiration_list.css');
   return ting_new_materials_render_cover($search_objects, $node->title);
 }
 
