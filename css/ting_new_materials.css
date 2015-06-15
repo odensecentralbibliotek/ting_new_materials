@@ -1,23 +1,19 @@
-/* 
-    Document   : ting_inspiration_list.css
-    Created on : Jan 28, 2015, 10:29:35 AM
+/*
+    Document   : ting_new_materials.css
 */
 
 
-/* Inspiration list */
+/* New materials list */
 
 
-.ting-inspiration-list .ting-inspiration-title {
+.new-materials-header .new-materials-title {
   padding-left: 16px;
-  padding-top:  16px;
 }
 
-.ting-inspiration-list .search-results li {
+.new-materials-covers li {
   margin-bottom: 1.5em;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
-.ting-inspiration-list .search-results ul {
-  margin-left: 20px;
-}
+
 
