@@ -115,13 +115,12 @@ function ting_new_materials_covers($node) {
 
   // Build search query based on node fields.
   $query = ting_new_materials_build_search_query($node);
-file_put_contents("/home/quickstart/work/debug/debugnewm6.txt", print_r($query, TRUE), FILE_APPEND);
   // We get 3 times the result needed in order to maximize the odds of getting objects with covers
   $search_result = ting_new_materials_perform_search($query, $num_per_page * 3);
   $search_objects = ting_new_materials_process_search_results($search_result);
   $search_objects = ting_new_materials_build_search_result($search_objects, $num_per_page );
   drupal_add_js(drupal_get_path('module', 'ting_covers') . '/js/ting-covers.js');
-  drupal_add_css(drupal_get_path('module', 'ting_inspiration_list') . '/css/ting_inspiration_list.css');
+  drupal_add_css(drupal_get_path('module', 'ting_new_materials') . '/css/ting_new_materials.css');
   return ting_new_materials_render_cover($search_objects, $node->title);
 }
 

@@ -185,7 +185,6 @@ function ting_new_materials_do_search($query, $page = 0, $num_per_page = 10) {
  *  The ids from the search result.
  */
 function ting_new_materials_process_search_results($search_results) {
-  file_put_contents("/home/quickstart/work/debug/debugnewm3.txt", print_r($search_results, TRUE), FILE_APPEND);
   $ids = array();
   if ($search_results) {
     foreach ($search_results as $search_result) {
@@ -211,7 +210,6 @@ function ting_new_materials_process_search_results($search_results) {
       }
     }
   }
-  file_put_contents("/home/quickstart/work/debug/debugnewm4.txt", print_r($ids, TRUE), FILE_APPEND);
   return $ids;
 }
 
@@ -281,7 +279,6 @@ function ting_new_materials_build_search_result($search_objects, $number_of_obje
       }
     }
   }
-file_put_contents("/home/quickstart/work/debug/debugnewm5.txt", print_r($cached_results, TRUE), FILE_APPEND);
   return $cached_results;
 }
 
