@@ -25,6 +25,7 @@ features[field_instance][] = node-new_materials-field_ting_new_materials_items
 features[field_instance][] = node-new_materials-field_ting_new_materials_limit
 features[field_instance][] = node-new_materials-field_ting_new_materials_search
 features[field_instance][] = node-new_materials-field_ting_new_materials_covers
+features[image][] = ting_new_materials_cover
 features[node][] = new_materials
 features[page_manager_handlers][] = node_view_panel_context_new_materials
 features[variable][] = comment_anonymous_new_materials

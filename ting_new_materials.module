@@ -228,7 +228,7 @@ function ting_new_materials_render_cover($cached_results, $title) {
   foreach ($cached_results as $object) {
     // Add the result to an array for the "ting_search_results" theme
     // function.
-    $image = theme('ting_object_cover', array('elements' => array('#object' => $object, '#image_style' => 'ding_list_medium')));
+    $image = theme('ting_object_cover', array('elements' => array('#object' => $object, '#image_style' => 'ting_new_materials_cover')));
     $options = array(
       'html' => TRUE,
       'attributes' => array('title' => $object->collectionTitle),
