@@ -75,7 +75,7 @@ function ting_new_materials_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Limits in days how old the new materials maybe. E.g. a value of 90 limits to last 90 days',
+    'description' => 'Limits in days how old the new materials may be. E.g. a value of 90 limits to last 90 days',
     'display' => array(
       'default' => array(
         'label' => 'above',
