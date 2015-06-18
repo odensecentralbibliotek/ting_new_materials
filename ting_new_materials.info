@@ -48,3 +48,7 @@ features_exclude[field][node-new_materials-field_ting_new_materials_limit] = nod
 features_exclude[field][node-new_materials-field_ting_new_materials_search] = node-new_materials-field_ting_new_materials_search
 features_exclude[field][node-new_materials-field_ting_new_materials_items] = node-new_materials-field_ting_new_materials_items
 features_exclude[field][node-new_materials-field_ting_new_materials_covers] = node-new_materials-field_ting_new_materials_covers
+
+version = "master-dev"
+project = "ting_new_materials"
+datestamp = "1426503890"
