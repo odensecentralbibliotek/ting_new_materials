@@ -109,8 +109,12 @@ function ting_new_materials_content_type_render($subtype, $conf, $panel_args, $c
 }
 
 function ting_new_materials_covers($node) {
+  drupal_add_js(drupal_get_path('module', 'ting_covers') . '/js/ting-covers.js');
+  drupal_add_css(drupal_get_path('module', 'ting_new_materials') . '/css/ting_new_materials.css');
+
   if ($cache = ting_new_materials_get_cache($node->nid)) {
-     return $cache->data;
+    $cache['#title'] = 'cached';
+    return $cache;
   }
   // Get number of results.
   $items = field_get_items('node', $node, 'field_ting_new_materials_items');
@@ -124,13 +128,10 @@ function ting_new_materials_covers($node) {
   $search_objects = ting_new_materials_process_search_results($search_result);
   $search_objects = ting_new_materials_build_search_result($search_objects, $num_per_page );
 
-  drupal_add_js(drupal_get_path('module', 'ting_covers') . '/js/ting-covers.js');
-  drupal_add_css(drupal_get_path('module', 'ting_new_materials') . '/css/ting_new_materials.css');
-
   $content = ting_new_materials_render_cover($search_objects, $node->title);
 
   cache_set('ting_new_materials_' . $node->nid, $content, 'cache', time() + 604800);
-  return ting_new_materials_render_cover($search_objects, $node->title);
+  return $content;
 }
 
 
@@ -139,7 +140,7 @@ function ting_new_materials_covers($node) {
  */
 function ting_new_materials_get_cache($id) {
    if ($cache = cache_get('ting_new_materials_' . $id)) {
-     return $cache;
+     return $cache->data;
    } else {
      return null;
    }

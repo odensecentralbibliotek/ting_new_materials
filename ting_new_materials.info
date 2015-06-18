@@ -2,8 +2,8 @@ name = Ting New Materials
 description = New materials lists for Ting.
 core = 7.x
 package = Ding!
-php = 5.2.4
 project = ting_new_materials
+version = "7.x-0.1"
 dependencies[] = ctools
 dependencies[] = ding_availability
 dependencies[] = features
@@ -49,6 +49,4 @@ features_exclude[field][node-new_materials-field_ting_new_materials_search] = no
 features_exclude[field][node-new_materials-field_ting_new_materials_items] = node-new_materials-field_ting_new_materials_items
 features_exclude[field][node-new_materials-field_ting_new_materials_covers] = node-new_materials-field_ting_new_materials_covers
 
-version = "master-dev"
-project = "ting_new_materials"
-datestamp = "1426503890"
+
