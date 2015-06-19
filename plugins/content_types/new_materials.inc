@@ -113,7 +113,6 @@ function ting_new_materials_covers($node) {
   drupal_add_css(drupal_get_path('module', 'ting_new_materials') . '/css/ting_new_materials.css');
 
   if ($cache = ting_new_materials_get_cache($node->nid)) {
-    $cache['#title'] = 'cached';
     return $cache;
   }
   // Get number of results.

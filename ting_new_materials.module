@@ -311,6 +311,17 @@ function ting_new_materials_perform_search($query, $number_of_objects = 50) {
 }
 
 /**
+ * Implement hook node_presave
+ * Clear cached new materials when updateing the node.
+ *
+ */
+function ting_new_materials_node_presave ($node) {
+  if ($node->type == 'ting_new_materials') {
+    cache_clear_all('ting_new_materials_' . $node->nid, 'cache');
+  }
+}
+
+/**
  * Lightweight object representing a material in a inspiration list.
  */
 class NewMaterialsCoverObject {
