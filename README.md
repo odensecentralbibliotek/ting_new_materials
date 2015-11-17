@@ -22,4 +22,7 @@ Enable the Ting New materials feature
 
 Known issues
 -------------
-Sometimes there are images missing in the first view of a new page. A refreshing of the page fixes this.
+Sometimes there are images missing on the page. That happens because the material
+list is cached for a longer time than the covers on the page. To fix this set caching of covers to a week or a month.
+Covers don't update very often so caching for a long time isn't problem. Saving the new materials page again fixes the
+problem temporarily.
