@@ -202,7 +202,7 @@ function ting_new_materials_process_search_results($search_results) {
               // Get link to link the result back to the collection.
               $uri = entity_uri('ting_collection', $collection);
               $coverObject->uri = $uri['path'];
-
+              $coverObject->id = $collection->primary_object->id;
               $ids[$coverObject->localId] = $coverObject;
             }
           }
@@ -333,5 +333,5 @@ class NewMaterialsCoverObject {
   public $collectionTitle;
   public $uri;
   public $hasImage;
-
+  public $id;
 }
